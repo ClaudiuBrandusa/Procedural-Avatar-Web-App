@@ -1,0 +1,19 @@
+﻿@model UserData
+    <div class="main-img left-component" id="main-img">
+        @if (Model.status)
+        {
+            @if (Model.apiUrl.Contains("?"))
+            {
+                <img src='@(@Model.apiUrl+"&t="+DateTime.Now.Millisecond)' class="component-border main-img-size main-background-color" id="image" />
+            }
+            else
+            {
+                <img src='@(@Model.apiUrl+"?t="+DateTime.Now.Millisecond)' class="component-border main-img-size main-background-color" id="image" />
+            }
+        }
+        else
+        {
+            <p class="middle-position text-over-z-index">Can't connect to the API</p>
+            <img src="~/images/empty.png" class="main-background-color sample-img main-img-size component-border" id="image" />
+        }
+    </div>

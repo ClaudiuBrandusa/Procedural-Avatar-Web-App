@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+    <div class="div-center">
+
+        <form asp-controller="HomeController">
+            @Html.Partial("SetImage", new UserData { apiUrl = ViewData["url"].ToString(), status = ViewData["Status"].Equals("1")}, new ViewDataDictionary(ViewData))
+        </form>
+        <div class="right-component">
+            <form method="POST">
+                <table class="right-component">
+                    <tr>
+                        <td>Color:</td>
+                        <td><input id="colorInputId" type="color" name="color" onchange="updateSecondaryColor(colorInputId.value)" class="input-button" /></td>
+                    </tr>
+                    <tr>
+                        <td>Random color:</td>
+                        <td><input type="checkbox" id="randomColorStatusId" name="randomColorStatus" /></td>
+                    </tr>
+                    <tr>
+                        <td>Width: </td>
+                        <td><input class="slider-length-controller" name="width" id="widthInputId" type="range" min="100" step="10" max="10000" value="1000" oninput="widthOutputId.value = widthInputId.value" /><input type="number" max="10000" min="100" oninput="widthInputId.value = widthOutputId.value" id="widthOutputId" /> px</td>
+
+                    </tr>
+                    <tr>
+                        <td>Height: </td>
+                        <td><input name="height" class="slider-length-controller" step="10" id="heightInputId" type="range" min="100" max="10000" value="1000" oninput="heightOutputId.value = heightInputId.value" /><input type="number" max="10000" min="100" oninput="heightInputId.value = heightOutputId.value" ononline="heightOutputId.value = heightInputId.value" id="heightOutputId" /> px</td>
+
+                    </tr>
+                    <tr>
+                        <td><input id="GenerateImageBtn" type="button" value="Generate" onclick="setImage()" class="input-button" /></td>
+                        <td><input id="DownloadImageBtn" type="button" value="Download Image" class="input-button" disabled/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
