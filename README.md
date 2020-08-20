@@ -9,7 +9,7 @@ On the left part we can see the image result of the generation.
 ![alt text](https://github.com/ClaudiuBrandusa/Procedural-Avatar-Web-App/blob/master/images/2.PNG)
 #### The `random color` check box stands for the result's color. By ticking we will get a random color for the image.
 ![alt text](https://github.com/ClaudiuBrandusa/Procedural-Avatar-Web-App/blob/master/images/3.PNG)
-#### We can also to influence the image's resolution.
+#### We can also influence the image's resolution.
 ##### The resolution's constraints are:  
 - min = 100 
 - max = 10000
